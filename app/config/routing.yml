@@ -1,0 +1,5 @@
+arnaud_to_do:
+    resource: "@ArnaudToDoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

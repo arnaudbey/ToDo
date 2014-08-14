@@ -1,0 +1,5 @@
+services:
+    arnaud.task.manager:
+        class: Arnaud\ToDoBundle\Manager\TaskManager
+        arguments:
+            entityManager: @doctrine.orm.entity_manager

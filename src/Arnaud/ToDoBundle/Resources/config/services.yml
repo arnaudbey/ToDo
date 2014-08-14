@@ -1,0 +1,15 @@
+services:
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }
+    twig.extension.array:
+        class: Twig_Extensions_Extension_Array
+        tags:
+        - { name: twig.extension }
+
+    arnaud.task:
+        class: Arnaud\ToDoBundle\Controller\TaskController
+        arguments:
+            entityManager: @doctrine.orm.entity_manager
+            taskManager: @arnaud.task.manager

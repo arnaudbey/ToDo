@@ -1,0 +1,13 @@
+<ul>
+{% for task in tasks %}
+    <li>
+    	{% if task.status is not null %}
+    		{{ task.status.name }}
+    	{% else %}
+    		null status  
+    	{% endif %}
+    	- 
+    	<a href="{{ path('task.show', { 'taskId': task.id }) }}">{{ task.id }}</a> {{ task.title }}
+    </li>
+{% endfor %}
+</ul>
