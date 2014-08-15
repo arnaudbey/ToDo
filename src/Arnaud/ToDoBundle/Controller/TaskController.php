@@ -10,7 +10,7 @@ use Symfony\Component\Routing\RouterInterface;
 use Doctrine\ORM\EntityManager;
 
 /**
-* Class TaskrController
+* Class TaskController
 *
 * @Route(
 *   "",
@@ -46,7 +46,7 @@ class TaskController
     }
 
     /**
-     * @Route("/task/create")
+     * @Route("/task/create", name="task.create")
      */
     public function createAction()
     {
@@ -57,7 +57,7 @@ class TaskController
     }
 
     /**
-     * @Route("/task/{taskId}/delete")
+     * @Route("/task/{taskId}/delete", name="task.delete")
      * @Template()
      */
     public function deleteAction($taskId)
