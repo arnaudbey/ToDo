@@ -1,4 +1,10 @@
 {% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/arnaudtodo/css/bootstrap-datetimepicker.min.css') }}"/>
+{% endblock %}
+
 {% block body %}
 <a class="btn btn-default" href="{{ path('tasks') }}">
 	<span class="glyphicon glyphicon-chevron-left"></span> Back to tasks
@@ -7,6 +13,37 @@
 	<span class="glyphicon glyphicon-remove"></span> Delete this task
 </a>
 <hr/>
+<form role="form">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label for="title">Title</label>
+	    	<input class="form-control" type="text" id="title" name="title"  value="{{ task.title }}">
+		</div>
+		<div class="form-group">
+			<label for="end-date">End date</label>
+			<div class='input-group date' id='end-date'>
+				<input type='text' class="form-control" />
+				<span class="input-group-addon">
+		  			<span class="glyphicon glyphicon-calendar"></span>
+				</span>
+			</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<input class="btn btn-default" type="submit" value="Submit">
+	  	</div>
+	</div>
+	<div class="col-md-6">
+		<div class="form-group">
+			<label for="description">Description</label>
+			<textarea class="form-control" id="description" name="description" rows="4">{{ task.description }}</textarea>
+		</div>
+	</div>
+</form>
+{% endblock %}
 
-{{ task.id }}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src='{{ asset('bundles/arnaudtodo/js/moment.js') }}'></script>
+    <script type="text/javascript" src='{{ asset('bundles/arnaudtodo/js/bootstrap-datetimepicker.min.js') }}'></script>
+    <script type="text/javascript" src='{{ asset('bundles/arnaudtodo/js/show.js') }}'></script>
 {% endblock %}
