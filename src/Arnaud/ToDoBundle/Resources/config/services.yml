@@ -13,3 +13,4 @@ services:
         arguments:
             entityManager: @doctrine.orm.entity_manager
             taskManager: @arnaud.task.manager
+            router: @router
