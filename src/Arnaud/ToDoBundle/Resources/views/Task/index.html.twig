@@ -1,13 +1,35 @@
-<ul>
-{% for task in tasks %}
-    <li>
-    	{% if task.status is not null %}
-    		{{ task.status.name }}
-    	{% else %}
-    		null status  
-    	{% endif %}
-    	- 
-    	<a href="{{ path('task.show', { 'taskId': task.id }) }}">{{ task.id }}</a> {{ task.title }}
-    </li>
-{% endfor %}
-</ul>
+{% extends '::base.html.twig' %}
+{% block body %}
+<a class="btn btn-default" href="{{ path('task.create') }}"><span class="glyphicon glyphicon-plus"></span> Add a task</a>
+<hr/>
+
+<table class="table table-striped">
+	<tr>
+		<th>id</th>
+		<th>Title</th>
+		<th>Status</th>
+		<th class="text-right">Action</th>
+	</tr>
+	{% for task in tasks %}
+	    <tr>
+	    	<td>
+	    		{{ task.id }}
+	    	</td>
+	    	<td>
+	    		{{ task.title }}
+	    	</td>
+	    	<td>
+		    	{% if task.status is not null %}
+		    		{{ task.status.name }}
+		    	{% else %}
+		    		null status  
+		    	{% endif %}
+	    	</td>
+	    	<td class="text-right">
+	    		<a class="btn btn-default btn-xs" href="{{ path('task.show', { 'taskId': task.id }) }}"><span class="glyphicon glyphicon-pencil"></span> Edit</a> 
+	    		<a class="btn btn-default btn-xs btn-danger" href="{{ path('task.delete', { 'taskId': task.id }) }}"><span class="glyphicon glyphicon-remove"></span> Delete</a> 
+	    	</td>
+	    </tr>
+	{% endfor %}
+</table>
+{% endblock %}

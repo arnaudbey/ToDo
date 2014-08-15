@@ -1,1 +1,12 @@
-<p>X {{ task.title }}</p>
+{% extends '::base.html.twig' %}
+{% block body %}
+<a class="btn btn-default" href="{{ path('tasks') }}">
+	<span class="glyphicon glyphicon-chevron-left"></span> Back to tasks
+</a>
+<a class="btn btn-default btn-danger" href="{{ path('task.delete', { 'taskId': task.id }) }}">
+	<span class="glyphicon glyphicon-remove"></span> Delete this task
+</a>
+<hr/>
+
+{{ task.id }}
+{% endblock %}
