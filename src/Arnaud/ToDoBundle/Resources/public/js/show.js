@@ -1,3 +1,4 @@
 $(function () {
-	$('#end-date').datetimepicker();
+    $('#end-date').datetimepicker({
+	});
 });

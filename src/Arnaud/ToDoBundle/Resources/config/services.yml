@@ -14,3 +14,6 @@ services:
             entityManager: @doctrine.orm.entity_manager
             taskManager: @arnaud.task.manager
             router: @router
+        calls:
+            - [setRequest, [@request]]
+        scope: request
