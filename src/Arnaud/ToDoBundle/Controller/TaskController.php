@@ -45,7 +45,7 @@ class TaskController
     }
 
     /**
-     * @Route("/tasks/", name="tasks")
+     * @Route("/", name="tasks")
      * @Method("GET")
      * @Template()
      */

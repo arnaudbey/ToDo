@@ -2,9 +2,12 @@
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml
+/app/config/security.yml
 /app/logs/*
+/app/sessions/*
 !app/cache/.gitkeep
 !app/logs/.gitkeep
+!app/sessions/.gitkeep
 /build/
 /vendor/
 /bin/
