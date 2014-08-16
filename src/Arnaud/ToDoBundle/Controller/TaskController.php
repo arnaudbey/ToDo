@@ -70,6 +70,7 @@ class TaskController
 
     /**
      * @Route("/task/{taskId}/delete", name="task.delete")
+     * @Method("DELETE")
      */
     public function deleteAction($taskId)
     {

@@ -23,9 +23,15 @@
 	    	</td>
 	    	<td class="text-right">
 	    		<a class="btn btn-default btn-xs" href="{{ path('task.show', { 'taskId': task.id }) }}"><span class="glyphicon glyphicon-pencil"></span> Edit</a> 
-	    		<a class="btn btn-default btn-xs btn-danger" href="{{ path('task.delete', { 'taskId': task.id }) }}"><span class="glyphicon glyphicon-remove"></span> Delete</a> 
+	    		<a class="btn btn-default btn-xs btn-danger rest" data-method="DELETE" href="{{ path('task.delete', { 'taskId': task.id }) }}"><span class="glyphicon glyphicon-remove"></span> Delete</a> 
 	    	</td>
 	    </tr>
 	{% endfor %}
 </table>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src='{{ asset('bundles/arnaudtodo/js/lib/jquery.restfulizer.js') }}'></script>
+    <script type="text/javascript" src='{{ asset('bundles/arnaudtodo/js/restful.js') }}'></script>
 {% endblock %}
