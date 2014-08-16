@@ -37,7 +37,7 @@ class TaskController
         $this->router = $router;
     }
 
-    public function setRequest(Request $request = null)
+    public function setRequestAction(Request $request = null)
     {
         $this->request = $request;
 

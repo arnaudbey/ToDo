@@ -15,5 +15,5 @@ services:
             taskManager: @arnaud.task.manager
             router: @router
         calls:
-            - [setRequest, [@request]]
+            - [setRequestAction, [@request]]
         scope: request
