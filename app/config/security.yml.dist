@@ -13,7 +13,10 @@ security:
         in_memory:
             memory:
                 users:
-                    yourlogin:  { password: yourpasswd, roles: 'ROLE_USER' }
+                    # hash here http://bcrypthashgenerator.apphb.com/
+                    yourlogin:  { password:hashedpassword , roles: 'ROLE_USER' }
 
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+            cost: 12

@@ -21,7 +21,7 @@
         "components/bootstrap": "3.*",
         "components/jquery": "*",
         "components/jqueryui": "*",
-        "components/font-awesome": "*"
+        "ircmaxell/password-compat": "~1.0.3"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
