@@ -46,6 +46,7 @@ class TaskController
 
     /**
      * @Route("/tasks/", name="tasks")
+     * @Method("GET")
      * @Template()
      */
     public function indexAction()
@@ -57,6 +58,7 @@ class TaskController
 
     /**
      * @Route("/task/create", name="task.create")
+     * @Method("GET")
      */
     public function createAction()
     {
@@ -68,6 +70,7 @@ class TaskController
 
     /**
      * @Route("/task/{taskId}/delete", name="task.delete")
+     * @Method("GET")
      */
     public function deleteAction($taskId)
     {
@@ -82,6 +85,7 @@ class TaskController
 
     /**
      * @Route("/task/{taskId}", name="task.show")
+     * @Method("GET")
      * @Template()
      */
     public function showAction($taskId)
