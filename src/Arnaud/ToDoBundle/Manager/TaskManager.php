@@ -20,9 +20,6 @@ class TaskManager
     {
         $task = new Task();
         $task->setCreationDate(new \DateTime());
-        if ($status = $this->entityManager->getRepository('ArnaudToDoBundle:Status')->find(1)) {
-            $task->setStatus($status);
-        }
         $task->setCreationDate(new \DateTime());
         $this->entityManager->persist($task);
         $this->entityManager->flush();
