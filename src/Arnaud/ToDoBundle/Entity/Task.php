@@ -50,11 +50,6 @@ class Task
     private $endDate;
 
     /**
-    * @ORM\ManyToOne(targetEntity="Status")
-    */
-    private $status;
-
-    /**
      * Get id
      *
      * @return integer
@@ -154,28 +149,5 @@ class Task
     public function getEndDate()
     {
         return $this->endDate;
-    }
-
-    /**
-     * Set status
-     *
-     * @param  \Arnaud\ToDoBundle\Entity\Status $status
-     * @return Task
-     */
-    public function setStatus(\Arnaud\ToDoBundle\Entity\Status $status = null)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return \Arnaud\ToDoBundle\Entity\Status
-     */
-    public function getStatus()
-    {
-        return $this->status;
     }
 }
